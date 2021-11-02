@@ -7,6 +7,7 @@ const app = new Vue({
                 'Fare la spesa',
                 'Fare il bucato'
             ],
+
             newTask: '',
             error: false
         },
@@ -20,9 +21,9 @@ const app = new Vue({
                     this.error = false
                 } else {
                     this.error = true;
-                    this.newTask = ''
                 }
-            }
-
+                this.newTask = ''
+            },
         }
     })
+
