@@ -8,32 +8,51 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
         integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+        
+            body {
+                display: flex;
+                width: 70%;
+                margin: auto;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-content: center;
+            }
+        
+            img {
+                height: 50px;
+            }
+        </style>
     <title>Vue Todolist</title>
 </head>
 
 <body>
 
-    <div id="app">
+<div id="app">
         <div class="addTasks">
             <input type="text" v-model="newTask" @keyup.enter="addTask">
             <button @click="addTask">Add</button>
             <div class="error">Devi scrivere una task</div>
         </div>
-        
-<div class="tasks" v-if="tasks.length > 0">
-    <div class="item" v-for="(task, index) in tasks">
-        {{task}}
-        <div class="delete-task">
-            <i class="fas fa-times fa-lg fa-fw" @click="removeTask(index)"></i>
-        </div>
-    </div>
-    <div v-else>
-        <p>Qui non c'è niente, Aggiungilo grazie</p>
-    </div>
-</div>
+        <div class="Tasks" v-if="Tasks.length > 0">
+            <div class="item" v-for="(Task, index) in Tasks">
+                {{Task}}
+                <div class="delete-task">
+                    <i class="fas fa-times fa-lg fa-fw" @click="removeTask(index)"></i>
+                </div>
+            </div>
+            <div v-else>
+                <p>Qui manca qualcosa, Allontanarsi dalla linea Gialla</p>
+                </div>
+                </div>
     </div>
 
-<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script src="./main.js"></script>
 </body>
 
