@@ -79,7 +79,7 @@ button{
         <div class="addTasks">
             <input type="text" placeholder="Nuovo Todo" v-model="newTask" @keyup.enter="addTasks">
             <button @click="addTasks">Aggiungi</button>
-            <div class="error">Devi scrivere una task</div>
+            <div v-show="error" class="error">Devi scrivere una task</div>
         </div>
         <div class="Tasks" v-if="Tasks.length > 0">
             <div class="item" v-for="(Task, index) in Tasks">
@@ -90,7 +90,7 @@ button{
                 </div>
 </div>
 <div v-else>
-                <p>Qui manca qualcosa, Allontanarsi dalla linea Gialla</p>
+                <p>Qui manca qualcosa</p>
                 </div>
     </div>
 

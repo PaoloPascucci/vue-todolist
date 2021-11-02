@@ -1,12 +1,14 @@
 const app = new Vue({
     el: '#app',
-        newTask: '',
+
         data: {
             Tasks: [
                 'Fare i compiti',
                 'Fare la spesa',
                 'Fare il bucato'
-            ]
+            ],
+            newTask: '',
+            error: false
         },
         methods: {
             removeTask(i) {
@@ -14,13 +16,12 @@ const app = new Vue({
             },
             addTasks() {
                 if (this.newTask != '' && this.newTask.length > 5) {
-                    this.Tasks.push(this.newTask)
+                    this.Tasks.push(this.newTask);
                     this.error = false
                 } else {
-                    this.error = true
+                    this.error = true;
+                    this.newTask = ''
                 }
-
-                this.newTask = ''
             }
 
         }
