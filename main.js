@@ -12,7 +12,7 @@ const app = new Vue({
             removeTask(i) {
                 this.Tasks.splice(i, 1)
             },
-            addTask() {
+            addTasks() {
                 if (this.newTask != '' && this.newTask.length > 5) {
                     this.Tasks.push(this.newTask)
                     this.error = false

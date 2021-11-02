@@ -18,16 +18,55 @@
             body {
                 display: flex;
                 width: 70%;
+                height: 700px;
                 margin: auto;
                 flex-wrap: wrap;
                 justify-content: center;
                 align-content: center;
+                background-color: #ededed;
             }
-        
+        .logo {
+            padding: 1rem;
+        }
             img {
-                height: 50px;
+                height: 70px;
             }
-        </style>
+            #app{
+                text-align: center;
+                background-color: white;
+                width: 500px;
+                height: 500px;
+                margin:auto
+            }
+        .item{
+    border-bottom: solid 1px grey;
+    display: flex;
+    justify-content: space-between;
+    margin:1rem
+    
+}
+.Tasks {
+    margin: 2rem 3rem;
+    padding: 1rem;
+    background-color: #ededed;
+    border-radius: 1rem;
+}
+input {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid;
+    width: 15rem;
+}
+button{
+        padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid;
+}
+.error{
+    color: crimson;
+    padding-top :1rem;
+}
+</style>
     <title>Vue Todolist</title>
 </head>
 
@@ -38,8 +77,8 @@
         <img src="./boolean.png" alt="">
     </div>
         <div class="addTasks">
-            <input type="text" v-model="newTask" @keyup.enter="addTask">
-            <button @click="addTask">Add</button>
+            <input type="text" placeholder="Nuovo Todo" v-model="newTask" @keyup.enter="addTasks">
+            <button @click="addTasks">Aggiungi</button>
             <div class="error">Devi scrivere una task</div>
         </div>
         <div class="Tasks" v-if="Tasks.length > 0">
@@ -48,10 +87,10 @@
                 <div class="delete-task">
                     <i class="fas fa-times fa-lg fa-fw" @click="removeTask(index)"></i>
                 </div>
-            </div>
-            <div v-else>
-                <p>Qui manca qualcosa, Allontanarsi dalla linea Gialla</p>
                 </div>
+</div>
+<div v-else>
+                <p>Qui manca qualcosa, Allontanarsi dalla linea Gialla</p>
                 </div>
     </div>
 
