@@ -14,7 +14,18 @@
 <body>
 
     <div id="app">
-    
+        
+<div class="tasks" v-if="tasks.length > 0">
+    <div class="item" v-for="(task, index) in tasks">
+        {{task}}
+        <div class="delete-task">
+            <i class="fas fa-times fa-lg fa-fw" @click="removeTask(index)"></i>
+        </div>
+    </div>
+    <div v-else>
+        <p>Qui non c'è niente, Aggiungilo grazie</p>
+    </div>
+</div>
     </div>
 
 <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>

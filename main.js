@@ -9,6 +9,9 @@ const app = new Vue(
             ]
         },
         methods: {
+            removeTask(i) {
+                this.tasks.splice(i, 1)
+            },
 
         }
     })
